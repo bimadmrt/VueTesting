@@ -18,7 +18,7 @@ export default {
   name: 'navbar',
   data () {
     return {
-      judul: 'PWA'
+      judul: 'PWA Meal Testing'
     }
   },
   components: {
