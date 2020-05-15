@@ -7,12 +7,6 @@
             <div class="Triangle Triangle--three"/>
             <div class="Triangle Triangle--four"/>
         </div>
-        <h1 class="title">
-            mealapp
-        </h1>
-        <h2 class="subtitle">
-            API Meal App by Rifqi Ardhian
-        </h2>
     </div>
   </div>
 </template>
@@ -22,8 +16,9 @@ export default {
 </script>
 <style scoped>
 .row-banner {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   padding: 100px;
+  text-align: center;
 }
 .VueToNuxtLogo {
   display: inline-block;

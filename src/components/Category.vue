@@ -4,11 +4,14 @@
       <b-row class="justify-content-center">
         <div v-bind:key="data.index" v-for="data in meals">
           <b-col >
-            <Card
+            <router-link
+        :to="{ name: 'categoryfilter', params: { name: data.strCategory } }"
+        style="text-decoration: none">
+        <card
             :images="data.strCategoryThumb"
             :tagss="tgs"
-            :title="data.strCategory"
-            :text="data.strCategoryDescription | truncate(50,'...')"/>
+            :title="data.strCategory"/>
+        </router-link>
           </b-col>
         </div>
       </b-row>

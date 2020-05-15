@@ -7,27 +7,40 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#">Home</b-nav-item>
-        <b-nav-item href="#">Category</b-nav-item>
-        <b-nav-item href="#">Ingredient</b-nav-item>
-        <b-nav-item href="#">Area</b-nav-item>
-        <b-nav-item href="#">About</b-nav-item>
-      </b-navbar-nav>
+                <b-nav-item href="/">Home</b-nav-item>
+                <b-nav-item href="/about">About</b-nav-item>
+                <b-nav-item href="/ingredient">Ingredient</b-nav-item>
+                <b-nav-item href="/search">Search Foods</b-nav-item>
+                <template v-if="user.loggedIn">
+                    <b-nav-item href="/favourites">Favourites</b-nav-item>
+                    <b-nav-item @click.prevent="logout">Logout</b-nav-item>
+                </template>
+                <template v-else>
+                    <b-nav-item href="/login">Login</b-nav-item>
+                </template>
+            </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </div>
 </template>
 <script>
-export default {
-  data () {
-    return {
-      meal: ''
+import { mapGetters } from 'vuex'
+import firebase from 'firebase'
 
-    }
+export default {
+  computed: {
+    // map `this.user` to `this.$store.getters.user`
+    ...mapGetters({
+      user: 'user'
+    })
   },
   methods: {
-    getMeal () {
-
+    logout () {
+      firebase.auth().signOut().then(() => {
+        this.$router.replace({
+          name: 'Login'
+        })
+      })
     }
   }
 }

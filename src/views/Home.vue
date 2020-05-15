@@ -1,7 +1,6 @@
 <template>
 <div id="app">
-      <Navbar />
-      <Logo />
+      <AppLogo />
       <Title :strtitle="judul" />
       <h2 class="subtitle">
         Bima Demarta Aisy
@@ -11,8 +10,7 @@
 </template>
 
 <script>
-import Logo from '@/components/Logo.vue'
-import Navbar from '@/components/Navbar.vue'
+import AppLogo from '@/components/AppLogo.vue'
 import Category from '@/components/Category.vue'
 import Title from '@/components/Title.vue'
 
@@ -24,8 +22,7 @@ export default {
     }
   },
   components: {
-    Logo,
-    Navbar,
+    AppLogo,
     Category,
     Title
 
