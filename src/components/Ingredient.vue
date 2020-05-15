@@ -22,7 +22,7 @@ export default {
   name: 'Ingredients',
   data () {
     return {
-      ttl: 'Our Ingredients',
+      ttl: 'Choose Your Ingredients',
       results: []
     }
   },

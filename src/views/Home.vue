@@ -2,9 +2,6 @@
 <div id="app">
       <AppLogo />
       <Title :strtitle="judul" />
-      <h2 class="subtitle">
-        Bima Demarta Aisy
-      </h2>
       <category />
 </div>
 </template>
